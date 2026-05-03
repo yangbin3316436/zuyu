@@ -815,6 +815,19 @@ h2 {
   gap: 16px;
 }
 
+.booking-form h3 {
+  margin: 0;
+  color: #fffdf8;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.booking-intro {
+  margin: 8px 0 0;
+  color: rgba(255, 253, 248, .72);
+  font-size: 14px;
+}
+
 .form-row {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -851,15 +864,70 @@ textarea {
   resize: vertical;
 }
 
+.booking-form .btn {
+  justify-self: start;
+}
+
 input::placeholder,
 textarea::placeholder {
   color: rgba(255, 253, 248, .46);
+}
+
+.form-error {
+  margin: 0;
+  padding: 12px 14px;
+  border-left: 3px solid #f7d79a;
+  background: rgba(255, 255, 255, .08);
+  color: #fff1bf;
+  font-size: 13px;
 }
 
 .form-note {
   margin: 0;
   color: rgba(255, 253, 248, .68);
   font-size: 13px;
+}
+
+.booking-confirmation {
+  display: grid;
+  gap: 12px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+}
+
+.booking-confirmation > strong {
+  color: #f7d79a;
+  font-size: 20px;
+}
+
+.booking-confirmation > span {
+  color: rgba(255, 253, 248, .78);
+  font-size: 13px;
+}
+
+.booking-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+}
+
+.booking-details div {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, .06);
+}
+
+.booking-details dt {
+  color: rgba(255, 253, 248, .62);
+  font-size: 12px;
+}
+
+.booking-details dd {
+  margin: 4px 0 0;
+  color: #fffdf8;
+  font-weight: 800;
 }
 
 .site-footer {
@@ -1095,14 +1163,15 @@ textarea::placeholder {
 
   .hero-strip,
   .service-grid,
-  .packages,
-  .feature-list,
-  .checks,
-  .form-row,
-  .menu-grid,
-  .glam-grid {
-    grid-template-columns: 1fr;
-  }
+    .packages,
+    .feature-list,
+    .checks,
+    .form-row,
+    .booking-details,
+    .menu-grid,
+    .glam-grid {
+      grid-template-columns: 1fr;
+    }
 
   .hero-strip {
     transform: translateY(34%);
@@ -1151,6 +1220,10 @@ textarea::placeholder {
 
   .project-content {
     padding: 48px 0;
+  }
+
+  .booking-form .btn {
+    justify-self: stretch;
   }
 
   .footer-inner {
