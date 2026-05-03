@@ -76,7 +76,7 @@ export default function Home() {
             </div>
             <div className="info-item">
               <span className="info-label">门店位置</span>
-              <span className="info-value">云泉路 88 号</span>
+              <span className="info-value">上海市浦东新区世纪大道5003号</span>
             </div>
           </div>
           <div className="nav-links">
@@ -153,7 +153,7 @@ export default function Home() {
               </div>
               <div className="hours-row">
                 <span>门店地址</span>
-                <strong>城市中心区云泉路 88 号</strong>
+                <strong>城市中心区上海市浦东新区世纪大道5003号</strong>
               </div>
               <div className="hours-row">
                 <span>停车服务</span>
@@ -381,6 +381,20 @@ export default function Home() {
               </p>
             </div>
             <div className="contact-grid">
+              <aside className="contact-card map-card" aria-label="门店地图位置">
+                <h3>门店位置地图</h3>
+                <p className="map-intro">上海夜色里的一枚金色坐标，锁定放松与微醺氛围。</p>
+                <div className="tempt-map" role="img" aria-label="上海市浦东新区世纪大道5003号地图标记">
+                  <div className="map-glow" />
+                  <div className="map-pin" aria-hidden="true">
+                    <span>泉</span>
+                  </div>
+                  <p>上海市浦东新区世纪大道5003号</p>
+                </div>
+                <a className="btn btn-primary" href="https://uri.amap.com/marker?position=121.5361,31.2356&name=%E5%A4%A9%E4%B8%8A%E4%BA%BA%E9%97%B4%E6%B4%97%E6%B5%B4%E4%B8%AD%E5%BF%83&src=web" target="_blank" rel="noreferrer">
+                  打开地图导航
+                </a>
+              </aside>
               <aside className="contact-card">
                 <h3>门店信息</h3>
                 <dl>
@@ -390,11 +404,11 @@ export default function Home() {
                   </div>
                   <div>
                     <dt>营业地址</dt>
-                    <dd>城市中心区云泉路 88 号</dd>
+                    <dd>城市中心区上海市浦东新区世纪大道5003号</dd>
                   </div>
                   <div>
                     <dt>交通提示</dt>
-                    <dd>地铁 2 号线云泉站 B 口步行 6 分钟</dd>
+                    <dd>地铁 2 号线世纪大道站出站后打车约 10 分钟</dd>
                   </div>
                   <div>
                     <dt>官方声明</dt>
