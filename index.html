@@ -1,0 +1,1533 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>天上人间洗浴中心官方网站</title>
+  <meta name="description" content="天上人间洗浴中心官方网站，提供温泉泡汤、汗蒸理疗、足道养护、芳香SPA、餐饮茶歇与客房休憩服务。">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172522;
+      --muted: #5c6f69;
+      --paper: #f7f4ed;
+      --soft: #ebe4d5;
+      --jade: #0e6f61;
+      --jade-dark: #0a4e47;
+      --copper: #b8773d;
+      --rose: #c75e66;
+      --line: rgba(23, 37, 34, .13);
+      --white: #fffdf8;
+      --shadow: 0 22px 60px rgba(23, 37, 34, .15);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      object-fit: cover;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+      background: rgba(12, 41, 36, .92);
+      color: #fffdf8;
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 96px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(290px, .95fr) minmax(360px, 1.12fr) auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 62px;
+      height: 62px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid rgba(255, 255, 255, .42);
+      border-radius: 50%;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .04));
+      color: #f7d79a;
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+      text-align: center;
+      flex: 0 0 auto;
+      box-shadow: inset 0 0 0 6px rgba(255, 255, 255, .04);
+    }
+
+    .brand-text,
+    .brand-text span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1.1;
+      letter-spacing: 0;
+    }
+
+    .brand-text span {
+      color: rgba(255, 255, 255, .7);
+      font-size: 14px;
+      line-height: 1.25;
+      margin-top: 8px;
+    }
+
+    .header-info {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .info-item {
+      min-height: 58px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, .14);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .info-label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #f7d79a;
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .info-label::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      flex: 0 0 auto;
+    }
+
+    .info-value {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255, 253, 248, .84);
+      font-size: 13px;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 12px;
+      font-size: 14px;
+      color: rgba(255, 255, 255, .82);
+      white-space: nowrap;
+    }
+
+    .nav-links a {
+      padding: 8px 3px;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 18px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--copper);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(184, 119, 61, .28);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, .46);
+      color: #fffdf8;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      color: #fffdf8;
+      background: #0c2924;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("assets/spa-hero.png") center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(7, 26, 23, .88), rgba(7, 26, 23, .52) 48%, rgba(7, 26, 23, .2)),
+        linear-gradient(0deg, rgba(7, 26, 23, .8), rgba(7, 26, 23, .05) 45%);
+    }
+
+    .hero-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 86px 0 64px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #f7d79a;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 16px 0 18px;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: rgba(255, 253, 248, .84);
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      transform: translateY(50%);
+      background: var(--white);
+      color: var(--ink);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255, 255, 255, .46);
+    }
+
+    .hero-strip div {
+      padding: 22px 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-strip div:last-child {
+      border-right: 0;
+    }
+
+    .hero-strip strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1.15;
+      color: var(--jade-dark);
+    }
+
+    .hero-strip span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    main {
+      padding-top: 96px;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 72px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 34px;
+    }
+
+    .section-kicker {
+      color: var(--copper);
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    h2 {
+      margin: 8px 0 0;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    .section-head p {
+      max-width: 480px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .panel {
+      padding: 36px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(23, 37, 34, .08);
+    }
+
+    .panel p {
+      color: var(--muted);
+      margin: 0 0 22px;
+    }
+
+    .checks {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .checks li {
+      padding: 12px 12px 12px 38px;
+      position: relative;
+      background: #f1ede2;
+      border-radius: var(--radius);
+      color: #30443f;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 14px;
+      color: var(--jade);
+      font-weight: 900;
+    }
+
+    .hours {
+      display: grid;
+      gap: 14px;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hours-row:last-child {
+      border-bottom: 0;
+    }
+
+    .hours-row span {
+      color: var(--muted);
+    }
+
+    .hours-row strong {
+      text-align: right;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1.3fr .85fr;
+      gap: 18px;
+    }
+
+    .photo-card {
+      min-height: 310px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      background: #10241f;
+    }
+
+    .photo-card.tall {
+      min-height: 638px;
+    }
+
+    .photo-card img {
+      height: 100%;
+      min-height: inherit;
+    }
+
+    .photo-caption {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 24px;
+      color: #fffdf8;
+      background: linear-gradient(0deg, rgba(7, 26, 23, .88), rgba(7, 26, 23, 0));
+    }
+
+    .photo-caption strong {
+      display: block;
+      font-size: 22px;
+    }
+
+    .photo-caption span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 253, 248, .78);
+      font-size: 14px;
+    }
+
+    .gallery-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      min-height: 250px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 34px rgba(23, 37, 34, .06);
+    }
+
+    .service-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #e3f0eb;
+      color: var(--jade);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      margin: 0 0 10px;
+      font-size: 21px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .service-card a {
+      margin-top: 24px;
+      color: var(--copper);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .feature-band {
+      background: var(--jade-dark);
+      color: #fffdf8;
+      margin: 58px 0 0;
+    }
+
+    .feature-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 74px 0;
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .feature-inner h2 {
+      color: #fffdf8;
+    }
+
+    .feature-inner p {
+      color: rgba(255, 253, 248, .72);
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .feature-item {
+      padding: 22px;
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .feature-item strong {
+      display: block;
+      color: #f7d79a;
+      font-size: 19px;
+      margin-bottom: 7px;
+    }
+
+    .feature-item span {
+      color: rgba(255, 253, 248, .76);
+      font-size: 14px;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .glam-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .glam-card {
+      min-height: 420px;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #10241f;
+      box-shadow: 0 16px 40px rgba(23, 37, 34, .12);
+    }
+
+    .glam-card img {
+      height: 100%;
+      min-height: inherit;
+      transition: transform .35s ease;
+    }
+
+    .glam-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .glam-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(9, 25, 22, .9), rgba(9, 25, 22, .08) 64%);
+    }
+
+    .glam-copy {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 22px;
+      color: #fffdf8;
+    }
+
+    .glam-copy small {
+      color: #f7d79a;
+      font-weight: 800;
+    }
+
+    .glam-copy h3 {
+      margin: 7px 0 8px;
+      font-size: 23px;
+      line-height: 1.15;
+    }
+
+    .glam-copy p {
+      margin: 0 0 14px;
+      color: rgba(255, 253, 248, .78);
+      font-size: 14px;
+    }
+
+    .glam-copy a {
+      color: #f7d79a;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .project-cloud {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .project-cloud a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      color: #fffdf8;
+      background: #173b35;
+      border: 1px solid rgba(255, 255, 255, .08);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .menu-group {
+      padding: 26px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .menu-group h3 {
+      margin: 0 0 16px;
+      color: var(--jade-dark);
+      font-size: 22px;
+    }
+
+    .menu-group ul {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .menu-group li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px dashed rgba(23, 37, 34, .18);
+      padding-bottom: 10px;
+    }
+
+    .menu-group li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .menu-group span {
+      color: var(--copper);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .package {
+      padding: 28px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package.featured {
+      background: #173b35;
+      color: #fffdf8;
+      border-color: #173b35;
+      box-shadow: var(--shadow);
+    }
+
+    .package small {
+      color: var(--copper);
+      font-weight: 800;
+    }
+
+    .package.featured small {
+      color: #f7d79a;
+    }
+
+    .package h3 {
+      margin: 8px 0 14px;
+      font-size: 24px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .price span {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+
+    .package.featured .price span,
+    .package.featured li {
+      color: rgba(255, 253, 248, .76);
+    }
+
+    .package ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .package li {
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .package li::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rose);
+      position: absolute;
+      left: 0;
+      top: .65em;
+    }
+
+    .contact-band {
+      background: #efe1cf;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 34px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+
+    .contact-card dl {
+      margin: 26px 0 0;
+      display: grid;
+      gap: 18px;
+    }
+
+    .contact-card dt {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-card dd {
+      margin: 4px 0 0;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .booking-form {
+      padding: 34px;
+      background: #173b35;
+      color: #fffdf8;
+      border-radius: var(--radius);
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-size: 13px;
+      color: rgba(255, 253, 248, .78);
+      font-weight: 700;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 46px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255, 255, 255, .2);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .08);
+      color: #fffdf8;
+      font: inherit;
+    }
+
+    select option {
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255, 253, 248, .46);
+    }
+
+    .form-note {
+      margin: 0;
+      color: rgba(255, 253, 248, .68);
+      font-size: 13px;
+    }
+
+    .site-footer {
+      background: #10241f;
+      color: rgba(255, 253, 248, .72);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1040px) {
+      .nav {
+        grid-template-columns: 1fr auto;
+        padding: 14px 0;
+      }
+
+      .header-info {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+
+      .service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 920px) {
+      .nav {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 14px 0;
+        align-items: flex-start;
+      }
+
+      .header-info {
+        width: 100%;
+      }
+
+      .nav-links {
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 4px;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-strip,
+      .service-grid,
+      .packages,
+      .menu-grid,
+      .glam-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feature-inner,
+      .contact-grid,
+      .about-grid,
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-card.tall {
+        min-height: 420px;
+      }
+
+      .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .brand {
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 52px;
+        height: 52px;
+        font-size: 24px;
+      }
+
+      .brand-text,
+      .brand-text span,
+      .brand-text strong {
+        white-space: normal;
+      }
+
+      .brand-text strong {
+        font-size: 23px;
+      }
+
+      .brand-text span {
+        font-size: 12px;
+        margin-top: 5px;
+      }
+
+      .header-info {
+        grid-template-columns: 1fr;
+      }
+
+      .info-item {
+        min-height: auto;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links .btn {
+        display: none;
+      }
+
+      .hero {
+        min-height: 720px;
+      }
+
+      .hero-inner {
+        padding: 72px 0 44px;
+      }
+
+      .hero-strip,
+      .service-grid,
+      .packages,
+      .feature-list,
+      .checks,
+      .form-row,
+      .menu-grid,
+      .glam-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-strip {
+        transform: translateY(34%);
+      }
+
+      .hero-strip div {
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-strip div:last-child {
+        border-bottom: 0;
+      }
+
+      main {
+        padding-top: 170px;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .panel,
+      .contact-card,
+      .booking-form {
+        padding: 24px;
+      }
+
+      .photo-card,
+      .photo-card.tall {
+        min-height: 310px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="主导航">
+      <a class="brand" href="#top" aria-label="天上人间洗浴中心首页">
+        <span class="brand-mark">泉</span>
+        <span class="brand-text">
+          <strong>天上人间洗浴中心</strong>
+          <span>城市温泉 · 康养休闲 · 官方网站</span>
+        </span>
+      </a>
+      <div class="header-info" aria-label="门店摘要">
+        <div class="info-item">
+          <span class="info-label">今日营业</span>
+          <span class="info-value">24小时开放</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">预约热线</span>
+          <span class="info-value">400-888-0520</span>
+        </div>
+        <div class="info-item">
+          <span class="info-label">门店位置</span>
+          <span class="info-value">云泉路 88 号</span>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">会所介绍</a>
+        <a href="#gallery">现场环境</a>
+        <a href="#glam">魅力项目</a>
+        <a href="#services">服务项目</a>
+        <a href="#packages">门票套餐</a>
+        <a href="#contact">预约到店</a>
+        <a class="btn btn-primary" href="tel:400-888-0520">电话预约</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="eyebrow">SINCE 2012 · OFFICIAL SITE</div>
+      <h1>天上人间洗浴中心</h1>
+      <p class="hero-copy">在城市里留一处灯光暧昧、热汽缭绕的放松空间。温泉泡汤、汗蒸理疗、足道养护、芳香SPA、茶歇餐饮与客房休憩，一次到店即可把身心从紧绷里慢慢松开。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#contact">立即预约</a>
+        <a class="btn btn-secondary" href="#services">查看项目</a>
+      </div>
+    </div>
+    <div class="hero-strip" aria-label="门店亮点">
+      <div>
+        <strong>24小时</strong>
+        <span>全年开放，夜间同样可预约到店</span>
+      </div>
+      <div>
+        <strong>3层空间</strong>
+        <span>沐浴、汤池、汗蒸、餐饮、休憩分区</span>
+      </div>
+      <div>
+        <strong>18项服务</strong>
+        <span>从泡汤到SPA的完整休闲项目</span>
+      </div>
+      <div>
+        <strong>明码标价</strong>
+        <span>项目公开透明，先确认后消费</span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">关于我们</div>
+          <h2>正规、舒适、适合商务休闲与朋友小聚的城市洗浴空间</h2>
+        </div>
+        <p>我们以干净水质、稳定温控、专业服务和沉浸式环境为核心，让洗浴不只是一场清洁，更是一段有仪式感的放松体验。</p>
+      </div>
+      <div class="about-grid">
+        <div class="panel">
+          <p>门店采用清晰分区动线：入店换鞋、沐浴净身、汤池泡浴、汗蒸排湿、足道护理、餐饮茶歇、客房休憩。服务人员经过统一培训，所有项目均在前台与房间价目表公开展示。</p>
+          <ul class="checks">
+            <li>每日水质巡检</li>
+            <li>一次性客用品</li>
+            <li>男女宾独立浴区</li>
+            <li>独立护理房间</li>
+          </ul>
+        </div>
+        <div class="panel hours" aria-label="营业信息">
+          <div class="hours-row">
+            <span>营业时间</span>
+            <strong>全天 24 小时</strong>
+          </div>
+          <div class="hours-row">
+            <span>预约电话</span>
+            <strong>400-888-0520</strong>
+          </div>
+          <div class="hours-row">
+            <span>门店地址</span>
+            <strong>城市中心区云泉路 88 号</strong>
+          </div>
+          <div class="hours-row">
+            <span>停车服务</span>
+            <strong>到店消费可享 3 小时免费停车</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="gallery">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">现场环境</div>
+          <h2>更多真实感图片，展示汤池、房间与服务团队</h2>
+        </div>
+        <p>新增会所现场氛围图，让页面从单一介绍变成可感知的到店体验：水汽、灯光、香薰、制服服务与护理陈列同时出现。</p>
+      </div>
+      <div class="gallery">
+        <article class="photo-card tall">
+          <img src="assets/spa-bath-hall.png" alt="天上人间洗浴中心温泉汤池大厅">
+          <div class="photo-caption">
+            <strong>多区温泉汤池</strong>
+            <span>恒温热泉、冷暖交替池、蒸汽房与休闲动线一体呈现。</span>
+          </div>
+        </article>
+        <div class="gallery-stack">
+          <article class="photo-card">
+            <img src="assets/spa-staff.png" alt="天上人间洗浴中心前厅美女服务员工">
+            <div class="photo-caption">
+              <strong>精致服务团队</strong>
+              <span>统一制服、微笑迎宾，营造高端、亲切、有吸引力的第一印象。</span>
+            </div>
+          </article>
+          <article class="photo-card">
+            <img src="assets/spa-treatment-room.png" alt="天上人间洗浴中心芳香SPA护理房">
+            <div class="photo-caption">
+              <strong>私享护理房</strong>
+              <span>足浴、芳香精油、热石、草本热敷等项目用品整齐陈列。</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="glam">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">魅力项目</div>
+          <h2>更有诱惑力的夜间会所氛围，点击查看项目详情</h2>
+        </div>
+        <p>新增更强吸引力的项目入口：制服迎宾、香薰护理、VIP茶歇、玫瑰足浴，以灯光、姿态、香氛和私享空间营造暧昧但正规的体验感。</p>
+      </div>
+      <div class="glam-grid">
+        <article class="glam-card">
+          <img src="assets/spa-glam-hostess.png" alt="魅影迎宾礼遇">
+          <div class="glam-copy">
+            <small>GLAM HOSTESS</small>
+            <h3>魅影迎宾礼遇</h3>
+            <p>丝缎制服、热汽长廊、到店引导与项目推荐，第一眼就进入会所氛围。</p>
+            <a href="projects/glam-hostess.html">查看详情</a>
+          </div>
+        </article>
+        <article class="glam-card">
+          <img src="assets/spa-aroma-suite.png" alt="午夜香薰SPA">
+          <div class="glam-copy">
+            <small>AROMA SPA</small>
+            <h3>午夜香薰SPA</h3>
+            <p>精油、热石、花浴和私享护理房，主打暧昧灯光下的深度放松。</p>
+            <a href="projects/aroma-spa.html">查看详情</a>
+          </div>
+        </article>
+        <article class="glam-card">
+          <img src="assets/spa-vip-lounge.png" alt="VIP茶歇包间">
+          <div class="glam-copy">
+            <small>VIP LOUNGE</small>
+            <h3>VIP茶歇包间</h3>
+            <p>天鹅绒沙发、私享茶台、果盘与温泉景观，适合夜间朋友局。</p>
+            <a href="projects/vip-lounge.html">查看详情</a>
+          </div>
+        </article>
+        <article class="glam-card">
+          <img src="assets/spa-foot-room.png" alt="玫瑰足浴护理">
+          <div class="glam-copy">
+            <small>ROSE FOOTCARE</small>
+            <h3>玫瑰足浴护理</h3>
+            <p>花瓣铜盆、暖灯、香氛热毛巾，仪式感更足的足道舒缓体验。</p>
+            <a href="projects/rose-footcare.html">查看详情</a>
+          </div>
+        </article>
+      </div>
+      <div class="project-cloud" aria-label="更多诱惑项目">
+        <a href="projects/aroma-spa.html">午夜香薰SPA</a>
+        <a href="projects/rose-footcare.html">玫瑰足浴护理</a>
+        <a href="projects/vip-lounge.html">VIP茶歇包间</a>
+        <a href="projects/glam-hostess.html">魅影迎宾礼遇</a>
+        <a href="#menu">热石草本护理</a>
+        <a href="#menu">采耳助眠</a>
+        <a href="#menu">香氛汗蒸</a>
+        <a href="#menu">私享客房</a>
+        <a href="#menu">夜间舒缓套餐</a>
+        <a href="#menu">团体包间预留</a>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">服务项目</div>
+          <h2>项目更多，从热汤到养护，一站式舒缓身心</h2>
+        </div>
+        <p>新增更多洗浴中心常见项目，覆盖泡汤、汗蒸、足道、SPA、采耳、茶歇、客房与团体接待，到店可按需选择单项或套餐。</p>
+      </div>
+      <div class="service-grid">
+        <article class="service-card">
+          <div>
+            <div class="service-icon">泉</div>
+            <h3>温泉泡汤</h3>
+            <p>恒温热泉、草本汤池、冷暖交替池，适合舒缓肩颈与放松疲惫。</p>
+          </div>
+          <a href="#contact">预约泡汤</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">蒸</div>
+            <h3>汗蒸理疗</h3>
+            <p>盐砖房、玉石房、低温休养房，分区温度清晰标识。</p>
+          </div>
+          <a href="#contact">了解汗蒸</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">足</div>
+            <h3>足道养护</h3>
+            <p>足浴、肩颈放松、腿部舒缓，正规技师服务，按时计费。</p>
+          </div>
+          <a href="#contact">预约足道</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">香</div>
+            <h3>芳香SPA</h3>
+            <p>香薰精油、热石舒缓、草本热敷，适合深度放松与护理体验。</p>
+          </div>
+          <a href="#contact">咨询SPA</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">背</div>
+            <h3>肩颈背部舒缓</h3>
+            <p>针对久坐紧绷、肩背酸胀，提供分时段护理方案。</p>
+          </div>
+          <a href="#contact">查看时段</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">耳</div>
+            <h3>采耳助眠</h3>
+            <p>安静房间、柔和灯光、专业工具，适合作为夜间放松项目。</p>
+          </div>
+          <a href="#contact">预约采耳</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">茶</div>
+            <h3>餐饮茶歇</h3>
+            <p>热粥、简餐、茶饮与水果供应，休闲区可与朋友轻松小聚。</p>
+          </div>
+          <a href="#contact">咨询餐饮</a>
+        </article>
+        <article class="service-card">
+          <div>
+            <div class="service-icon">房</div>
+            <h3>客房休憩</h3>
+            <p>钟点休息与过夜休憩均可预约，前台统一办理。</p>
+          </div>
+          <a href="#contact">预留客房</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="feature-band" aria-label="环境特色">
+      <div class="feature-inner">
+        <div>
+          <div class="section-kicker">环境特色</div>
+          <h2>灯光、水汽、香氛与制服服务，构成更有记忆点的会所氛围</h2>
+          <p>页面新增照片后，视觉重心更明确：访客能看到宽敞汤池、护理房细节与服务人员形象，整体从“文字介绍”升级为“可想象的到店体验”。</p>
+        </div>
+        <div class="feature-list">
+          <div class="feature-item">
+            <strong>分区控温</strong>
+            <span>汤池、汗蒸、休息区分别管理温度，舒适度更稳定。</span>
+          </div>
+          <div class="feature-item">
+            <strong>定时清洁</strong>
+            <span>公共区域高频巡检，拖鞋、毛巾、浴服分类消毒。</span>
+          </div>
+          <div class="feature-item">
+            <strong>专业迎宾</strong>
+            <span>服务团队统一制服，负责引导、介绍项目与预约安排。</span>
+          </div>
+          <div class="feature-item">
+            <strong>团体接待</strong>
+            <span>支持家庭、朋友局与商务小型聚会提前预留位置。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="menu">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">项目菜单</div>
+          <h2>洗浴项目更丰富，清晰展示可消费内容</h2>
+        </div>
+        <p>将项目按泡浴、理疗、休闲三类展示，访客一眼就能知道“这里能做什么”。价格为页面展示用参考价。</p>
+      </div>
+      <div class="menu-grid">
+        <article class="menu-group">
+          <h3>泡浴与汗蒸</h3>
+          <ul>
+            <li>基础沐浴入场 <span>¥68</span></li>
+            <li>草本温泉汤池 <span>¥98</span></li>
+            <li>盐砖汗蒸体验 <span>¥88</span></li>
+            <li>玉石低温理疗 <span>¥108</span></li>
+            <li>冷暖交替池 <span>含入场</span></li>
+          </ul>
+        </article>
+        <article class="menu-group">
+          <h3>养护与SPA</h3>
+          <ul>
+            <li>足道养护 45分钟 <span>¥128</span></li>
+            <li>肩颈背部舒缓 <span>¥168</span></li>
+            <li>芳香精油SPA <span>¥298</span></li>
+            <li>热石草本护理 <span>¥268</span></li>
+            <li>采耳助眠护理 <span>¥98</span></li>
+          </ul>
+        </article>
+        <article class="menu-group">
+          <h3>休闲与配套</h3>
+          <ul>
+            <li>茶饮水果套餐 <span>¥38</span></li>
+            <li>养生简餐套餐 <span>¥58</span></li>
+            <li>休闲大厅过夜 <span>¥88</span></li>
+            <li>独立客房 3小时 <span>¥168</span></li>
+            <li>团体包间预留 <span>咨询</span></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="packages">
+      <div class="section-head">
+        <div>
+          <div class="section-kicker">门票套餐</div>
+          <h2>公开价格，到店可核验</h2>
+        </div>
+        <p>以下为参考价，节假日与门店活动以现场公示为准。所有消费均可先确认后下单。</p>
+      </div>
+      <div class="packages">
+        <article class="package">
+          <small>基础入浴</small>
+          <h3>净享门票</h3>
+          <div class="price">¥68 <span>/ 位</span></div>
+          <ul>
+            <li>沐浴及公共汤池</li>
+            <li>基础汗蒸区体验</li>
+            <li>浴服、毛巾、拖鞋</li>
+          </ul>
+        </article>
+        <article class="package featured">
+          <small>人气推荐</small>
+          <h3>半日舒缓套餐</h3>
+          <div class="price">¥168 <span>/ 位</span></div>
+          <ul>
+            <li>净享门票全部内容</li>
+            <li>足浴养护 45 分钟</li>
+            <li>茶饮与水果一份</li>
+          </ul>
+        </article>
+        <article class="package">
+          <small>深度体验</small>
+          <h3>芳香SPA套餐</h3>
+          <div class="price">¥398 <span>/ 位</span></div>
+          <ul>
+            <li>入浴、汗蒸与汤池</li>
+            <li>芳香精油SPA 60 分钟</li>
+            <li>独立休憩房 2 小时</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-band" id="contact">
+      <div class="section">
+        <div class="section-head">
+          <div>
+            <div class="section-kicker">预约到店</div>
+            <h2>提前预约，减少等待</h2>
+          </div>
+          <p>提交意向后，前台会根据时段与项目安排回电确认。紧急到店请直接拨打电话。</p>
+        </div>
+        <div class="contact-grid">
+          <aside class="contact-card">
+            <h3>门店信息</h3>
+            <dl>
+              <div>
+                <dt>服务热线</dt>
+                <dd>400-888-0520</dd>
+              </div>
+              <div>
+                <dt>营业地址</dt>
+                <dd>城市中心区云泉路 88 号</dd>
+              </div>
+              <div>
+                <dt>交通提示</dt>
+                <dd>地铁 2 号线云泉站 B 口步行 6 分钟</dd>
+              </div>
+              <div>
+                <dt>官方声明</dt>
+                <dd>本店为正规洗浴休闲场所，拒绝任何违规服务咨询。</dd>
+              </div>
+            </dl>
+          </aside>
+          <form class="booking-form" action="#" method="post" id="bookingForm">
+            <div class="form-row">
+              <label>
+                姓名
+                <input name="name" placeholder="请输入称呼" required>
+              </label>
+              <label>
+                电话
+                <input name="phone" type="tel" placeholder="用于预约确认" required>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                到店人数
+                <select name="people">
+                  <option>1 位</option>
+                  <option>2 位</option>
+                  <option>3-4 位</option>
+                  <option>5 位及以上</option>
+                </select>
+              </label>
+              <label>
+                预约项目
+                <select name="service">
+                  <option>温泉泡汤</option>
+                  <option>汗蒸理疗</option>
+                  <option>足道养护</option>
+                  <option>芳香SPA</option>
+                  <option>采耳助眠</option>
+                  <option>独立客房</option>
+                  <option>团体接待</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              备注
+              <textarea name="message" placeholder="可填写预计到店时间、是否需要休息房或停车位"></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">提交预约意向</button>
+            <p class="form-note">演示页面不会真实提交信息；正式上线时可接入电话、表单系统或门店小程序。</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>© 2026 天上人间洗浴中心 版权所有</span>
+      <span>健康休闲 · 明码标价 · 正规经营</span>
+    </div>
+  </footer>
+
+  <script>
+    const bookingForm = document.querySelector("#bookingForm");
+
+    bookingForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("已收到预约意向，前台将尽快与您确认。");
+      bookingForm.reset();
+    });
+  </script>
+</body>
+</html>
